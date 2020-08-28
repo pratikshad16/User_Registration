@@ -10,4 +10,10 @@ public class UserRegistration {
         return pattern.matcher(firstName).matches();
 
     }
+    public boolean validateLastName(String lastName)
+    {
+        Pattern pattern = Pattern.compile(NAME_PATTERN);
+        return pattern.matcher(lastName).matches();
+
+    }
 }
