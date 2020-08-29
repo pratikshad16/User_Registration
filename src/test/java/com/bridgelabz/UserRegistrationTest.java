@@ -19,17 +19,23 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenLasttName_WhenProper_ShouldReturnTrue() {
+    public void givenLastName_WhenProper_ShouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateFirstName("Dhage");
+        boolean result = userRegistration.validateLastName("Dhage");
         Assert.assertTrue(result);
     }
 
     @Test
-    public void name() {
-    }public void givenLasttName_WhenShort_ShouldReturnFalse() {
+    public void givenLastName_WhenShort_ShouldReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateFirstName("Dh");
+        boolean result = userRegistration.validateLastName("Dh");
         Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenEmailId_WhenProper_ShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateEmailId("dhagepratiksha16@gmail.com");
+        Assert.assertTrue(result);
     }
 }
