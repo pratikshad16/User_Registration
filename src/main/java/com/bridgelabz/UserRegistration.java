@@ -22,4 +22,5 @@ public class UserRegistration {
         Pattern pattern = Pattern.compile(EMAIL_ID_PATTERN);
         return pattern.matcher(email).matches();
     }
+
 }

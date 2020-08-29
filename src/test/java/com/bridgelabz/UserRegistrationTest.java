@@ -38,4 +38,11 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validateEmailId("dhagepratiksha16@gmail.com");
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void givenEmailId_WhenNotProper_ShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateEmailId("dhagepratiksha16@gmail");
+        Assert.assertFalse(result);
+    }
 }
