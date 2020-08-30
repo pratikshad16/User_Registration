@@ -1,6 +1,4 @@
-package com.bridgelabz.U;
-
-//import com.bridgelabz;
+package com.bridgelabz.User;
 import com.bridgelabz.UserRegistration;
 import org.junit.Assert;
 import org.junit.Test;
@@ -73,20 +71,6 @@ public class UserRegistrationTest {
     public void givenLastName_WhenStartsWithLowercase_ShouldReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateFirstName("dhage");
-        Assert.assertFalse(result);
-    }
-
-    @Test
-    public void givenEmailId_WhenProper_ShouldReturnTrue() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateEmailId("dhagepratiksha16@gmail.com");
-        Assert.assertTrue(result);
-    }
-
-    @Test
-    public void givenEmailId_WhenNotProper_ShouldReturnFalse() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateEmailId("dhagepratiksha16@gmail");
         Assert.assertFalse(result);
     }
 
