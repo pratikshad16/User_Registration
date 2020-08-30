@@ -30,12 +30,12 @@ public class PasswordValidationTest {
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]
                 {
-                        {"Pratiksha12", true},
-                        {"3praTiksha", true},
-                        {"abc45defGd", true},
-                        {"abcDef6jbgG",true},
-                        {"pratiksha", false},
-                        {"Pratiksha", false},
+                        {"P@ratiksha1", true},
+                        {"3pra#Tiksha", true},
+                        {"@abc45defGd", true},
+                        {"abcD+ef6jbgG",true},
+                        {"Pratiksha1", false},
+                        {"Pratiksha#", false},
                         {"prati@khf",false}
                 });
     }

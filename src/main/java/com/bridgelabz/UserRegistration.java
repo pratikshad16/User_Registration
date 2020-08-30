@@ -6,7 +6,7 @@ public class UserRegistration {
     private static final String NAME_PATTERN = "^[A-Z][a-z]{3,}$";
     private static final String EMAIL_ID_PATTERN = "^[0-9a-zA-Z]+([+_.-][0-9a-zA-Z]+)*@[a-zA-Z0-9]+([.][a-zA-Z]{2,3}){1,2}$";
     private static final String MOBILE_NUMBER_PATTERN = "^[0-9]{2}[ ][0-9]{10}";
-    private static final String PASSWORD_PATTERN = "^(?=.*[A-Z].*)(?=.*[0-9].*)[A-Za-z0-9]{8,}";
+    private static final String PASSWORD_PATTERN = "(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%+!]{1}).{8,}";
 
 
     public boolean validateFirstName(String firstName)
