@@ -5,16 +5,37 @@ import org.junit.Test;
 
 public class UserRegistrationTest {
     @Test
-    public void givenFirstName_WhenProper_ShouldReturnTrue() {
+    public void givenFirstName_WhenStartsWithCapAndMinThreeChar_ShouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateFirstName("Pratiksha");
         Assert.assertTrue(result);
     }
 
     @Test
-    public void givenFirstName_WhenShort_ShouldReturnFalse() {
+    public void givenFirstName_WhenLessThanThreeChar_ShouldReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateFirstName("Pi");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenFirstName_WhenContainsSpecialChar_ShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateFirstName("Prat@h");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenFirstName_WhenContainsNumberValues_ShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateFirstName("Prat4hj");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenFirstName_WhenStartsWithLowercase_ShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateFirstName("pratiksha");
         Assert.assertFalse(result);
     }
 
@@ -29,6 +50,27 @@ public class UserRegistrationTest {
     public void givenLastName_WhenShort_ShouldReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateLastName("Dh");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenLastName_WhenContainsSpecialChar_ShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateFirstName("Dha#ge");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenLastName_WhenContainsNumberValues_ShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateFirstName("Dha4hj");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenLastName_WhenStartsWithLowercase_ShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateFirstName("dhage");
         Assert.assertFalse(result);
     }
 
