@@ -40,14 +40,14 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenLastName_WhenProper_ShouldReturnTrue() {
+    public void givenLastName_WhenStartsWithCapAndMinThreeChar_ShouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateLastName("Dhage");
         Assert.assertTrue(result);
     }
 
     @Test
-    public void givenLastName_WhenShort_ShouldReturnFalse() {
+    public void givenLastName_WhenLessThanThreeChar_ShouldReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateLastName("Dh");
         Assert.assertFalse(result);
@@ -89,21 +89,21 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenMobileNumber_InPreDefinedFormat_ReturnsTrue() {
+    public void givenMobileNumber_WhenStartsWithTwoDigitCountryCodeFollowBySpaceAndTenDigitMobileNumber_ReturnsTrue() {
         UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateMobileNumber("91 8652831978");
         Assert.assertTrue(result);
     }
 
     @Test
-    public void givenMobileNumber_WithoutSpaces_ReturnsFalse() {
+    public void givenMobileNumber_WhenNoSpaceAfterCountryCode_ReturnsFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateMobileNumber("918652831978");
         Assert.assertFalse(result);
     }
 
     @Test
-    public void givenMobileNumber_WhenNotInPreDefinedFormat_ReturnsFalse() {
+    public void givenMobileNumber_WhenLessThanTenDigit_ReturnsFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateMobileNumber("91 865283197");
         Assert.assertFalse(result);
