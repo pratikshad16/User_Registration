@@ -31,8 +31,9 @@ public class PasswordValidationTest {
         return Arrays.asList(new Object[][]
                 {
                         {"Pratiksha", true},
-                        {"pratiksha", true},
-                        {"abcdefgd", true},
+                        {"praTiksha", true},
+                        {"abcdefGd", true},
+                        {"abcDef6jbgG",true},
                         {"pratik", false},
                         {"pratikh234", false},
                         {"prati@khf",false}
